@@ -1,0 +1,21 @@
+.hover-full-opacity {
+    opacity: 75%;
+    color: white;
+
+  }
+  
+.hover-full-opacity:hover {
+opacity: 100%;
+}
+
+$color-list: ('light','Q','W','E','A','S','D','Z','X','C');
+
+@each $color in $color-list {
+    .text-illumination-#{$color} {
+        color: hsl(var(--color-#{$color}));
+    }
+
+    .text-illumination-#{$color}:hover {
+      text-shadow:0 0px 15px hsl(var(--color-light)/25%), 0 0px 15px hsl(var(--color-#{$color}));
+  }
+}

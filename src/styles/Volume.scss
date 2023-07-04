@@ -1,0 +1,65 @@
+.vol-off {
+    translate: -5px;
+}
+
+.vol-down {
+    translate: -2px;
+}
+
+.volume-bar {
+    
+    appearance: none; /* Elimina los estilos predeterminados del navegador */
+    outline: none; /* Elimina el contorno al enfocar el rango */
+    padding: 0;
+    margin: 0;
+
+    height: 5px;
+    background-color: black;
+
+}
+
+.volume-bar::-webkit-slider-thumb {
+    /* Estiliza el control deslizante en navegadores basados en WebKit (Chrome, Safari, etc.) */
+    appearance: none;
+    width: 12px;
+    height: 25px;
+    background-color: hsl(var(--color-dark));
+    box-shadow: 0 0px 5px black;
+    cursor: pointer;
+  }
+  
+.volume-bar::-moz-range-thumb {
+    /* Estiliza el control deslizante en navegadores basados en Gecko (Firefox) */
+    width: 10px;
+    height: 20px;
+    background-color: hsl(var(--color-dark));
+    cursor: pointer;
+}
+
+$color-list: ('light','Q','W','E','A','S','D','Z','X','C');
+
+@each $color in $color-list {
+
+    .volume-bar-illumination-#{$color}::-webkit-slider-thumb {
+
+        border: 1px solid hsl(var(--color-#{$color}));
+        box-shadow: 0 0px 5px hsl(var(--color-#{$color}));
+    }
+
+    .volume-bar-illumination-#{$color}::-moz-range-thumb {
+
+        border: 1px solid hsl(var(--color-#{$color}));
+        box-shadow: 0 0px 5px hsl(var(--color-#{$color}));
+    }
+}
+
+
+@media screen and (min-width: 720px) {
+    .vol-off {
+        translate: -6px;
+    }
+    
+    .vol-down {
+        translate: -3px;
+    }
+}

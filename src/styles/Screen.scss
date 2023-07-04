@@ -1,0 +1,11 @@
+.screen {
+    width: 150px;
+    height: 35px;
+    background-color: hsl(var(--color-light)/5%);
+}
+
+.screen-illumination {
+    color: hsl(var(--color-dark));
+    background-color: hsl(var(--color-light));
+    box-shadow: 0 0px 15px hsl(var(--color-light)/50%);
+}

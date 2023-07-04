@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --main-font: 'Russo One', sans-serif;
+
+    --color-dark: 0 0% 6%;
+    --color-light: 0 0% 100%;
+    --color-Q: 0 100% 50%;
+    --color-W: 30 100% 50%;
+    --color-E: 45 100% 50%;
+    --color-A: 60 100% 50%;
+    --color-S: 75 100% 50%;
+    --color-D: 120 100% 50%;
+    --color-Z: 180 100% 50%;
+    --color-X: 210 100% 50%;
+    --color-C: 270 100% 50%;
+
+}
+
+body {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--main-font);
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: hsl(var(--color-dark));
+}
+
+main {
+    border-radius: 3px;
+    width: 75%;
+    height: 75%;
+    background-image: url('./assets/wood-background.jpg');  
+}
+
+$color-list: ('light','Q','W','E','A','S','D','Z','X','C');
+
+@each $color in $color-list {
+    .main-illumination-#{$color} {
+        box-shadow:0 0px 30px hsl(var(--color-light)/25%), 0 0px 25px hsl(var(--color-#{$color}));
+    }
+}
+
+
+main > section {
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(var(--color-dark));
+    gap: 20px;
+}
+
+img {
+    width: 75px;
+    align-self: flex-end;
+    translate: 0px -5px;
+}
+
+
+.title-illumination {
+    color: hsl(var(--color-light));
+    text-shadow: 0 0 12px hsl(var(--color-light));
+}
+
+
+
+
+@media screen and (min-width: 720px) {
+    main {
+        height: 50%;
+        max-width: 700px;
+    }
+
+    main > section {
+        flex-direction: row;
+    }
+}
