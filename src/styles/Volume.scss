@@ -30,6 +30,7 @@
   
 .volume-bar::-moz-range-thumb {
     /* Estiliza el control deslizante en navegadores basados en Gecko (Firefox) */
+    appearance: none;
     width: 10px;
     height: 20px;
     background-color: hsl(var(--color-dark));
